@@ -1,22 +1,22 @@
 ---------------------------------------------
 -----------       UnitTests      ------------
 ---------------------------------------------
-[1;33mRunning test:	MapUnitTests::SingleLinkTest[0m
+Running test:   MapUnitTests::SingleLinkTest
 VERIFY_TRUE(graph.connect(5, 4))
 VERIFY_FALSE(graph.connect(4, 5))
 VERIFY_NOT_EQ(graph.distance(4, 4), 0)
 VERIFY_EQ(graph.distance(4, 5), 1)
-[1;32mPASSED	MapUnitTests::SingleLinkTest
-[0m
-[1;33mRunning test:	MapUnitTests::MultipleLinkTest[0m
+PASSED  MapUnitTests::SingleLinkTest
+
+Running test:   MapUnitTests::MultipleLinkTest
 VERIFY_TRUE(graph.connect(5, 4))
 VERIFY_TRUE(graph.connect(5, 6))
 VERIFY_EQ(graph.distance(4, 5), 1)
 VERIFY_EQ(graph.distance(5, 6), 1)
 VERIFY_EQ(graph.distance(4, 6), 2)
-[1;32mPASSED	MapUnitTests::MultipleLinkTest
-[0m
-[1;33mRunning test:	MapUnitTests::DisconnectedTest[0m
+PASSED  MapUnitTests::MultipleLinkTest
+
+Running test:   MapUnitTests::DisconnectedTest
 VERIFY_TRUE(graph.connect(5, 4))
 VERIFY_TRUE(graph.connect(1, 2))
 VERIFY_EQ(graph.distance(1, 2), 1)
@@ -25,9 +25,9 @@ VERIFY_EQ(graph.distance(1, 5), MyMap<int>::NOT_FOUND)
 VERIFY_EQ(graph.distance(1, 4), MyMap<int>::NOT_FOUND)
 VERIFY_EQ(graph.distance(2, 5), MyMap<int>::NOT_FOUND)
 VERIFY_EQ(graph.distance(2, 4), MyMap<int>::NOT_FOUND)
-[1;32mPASSED	MapUnitTests::DisconnectedTest
-[0m
-[1;33mRunning test:	MapUnitTests::TwoRouteTest[0m
+PASSED  MapUnitTests::DisconnectedTest
+
+Running test:   MapUnitTests::TwoRouteTest
 VERIFY_TRUE(graph.connect(5, 4))
 VERIFY_TRUE(graph.connect(1, 2))
 VERIFY_TRUE(graph.connect(1, 3))
@@ -38,16 +38,16 @@ VERIFY_TRUE(graph.connect(2, 5))
 VERIFY_EQ(graph.distance(2, 4), 2)
 VERIFY_TRUE(graph.connect(2, 4))
 VERIFY_EQ(graph.distance(2, 4), 1)
-[1;32mPASSED	MapUnitTests::TwoRouteTest
-[0m
-[1;33mRunning test:	MapUnitTests::SingleRemoveNodeTest[0m
+PASSED  MapUnitTests::TwoRouteTest
+
+Running test:   MapUnitTests::SingleRemoveNodeTest
 VERIFY_FALSE(graph.remove(5))
 VERIFY_TRUE(graph.connect(5, 4))
 VERIFY_TRUE(graph.remove(5))
 VERIFY_EQ(graph.distance(5, 4), MyMap<int>::NOT_FOUND)
-[1;32mPASSED	MapUnitTests::SingleRemoveNodeTest
-[0m
-[1;33mRunning test:	MapUnitTests::RemoveNodeTest[0m
+PASSED  MapUnitTests::SingleRemoveNodeTest
+
+Running test:   MapUnitTests::RemoveNodeTest
 VERIFY_TRUE(graph.connect(5, 4))
 VERIFY_TRUE(graph.connect(1, 2))
 VERIFY_TRUE(graph.connect(1, 3))
@@ -58,12 +58,12 @@ VERIFY_TRUE(graph.connect(2, 5))
 VERIFY_EQ(graph.distance(2, 4), 2)
 VERIFY_TRUE(graph.remove(5))
 VERIFY_EQ(graph.distance(2, 4), 3)
-[1;32mPASSED	MapUnitTests::RemoveNodeTest
-[0m
+PASSED  MapUnitTests::RemoveNodeTest
+
 ---------------------------------------------
 -----------       UnitTests      ------------
 ---------------------------------------------
-[1;33mRunning test:	TreeUnitTests::SingleEntryTest[0m
+Running test:   TreeUnitTests::SingleEntryTest
 VERIFY_TRUE(search.insert(5))
 VERIFY_FALSE(search.insert(5))
 VERIFY_TRUE(search.contains(5))
@@ -71,27 +71,27 @@ VERIFY_FALSE(search.contains(1))
 VERIFY_TRUE(search.remove(5))
 VERIFY_FALSE(search.contains(5))
 VERIFY_FALSE(search.remove(5))
-[1;32mPASSED	TreeUnitTests::SingleEntryTest
-[0m
-[1;33mRunning test:	TreeUnitTests::MultipleEntryTest[0m
+PASSED  TreeUnitTests::SingleEntryTest
+
+Running test:   TreeUnitTests::MultipleEntryTest
 VERIFY_TRUE(search.insert(50))
 VERIFY_TRUE(search.contains(50))
 VERIFY_TRUE(search.insert(200))
 VERIFY_TRUE(search.contains(200))
 VERIFY_TRUE(search.insert(1))
 VERIFY_TRUE(search.contains(1))
-[1;32mPASSED	TreeUnitTests::MultipleEntryTest
-[0m
-[1;33mRunning test:	TreeUnitTests::DeleteRootTest[0m
+PASSED  TreeUnitTests::MultipleEntryTest
+
+Running test:   TreeUnitTests::DeleteRootTest
 VERIFY_TRUE(search.insert(50))
 VERIFY_TRUE(search.insert(200))
 VERIFY_TRUE(search.insert(1))
 VERIFY_TRUE(search.remove(50))
 VERIFY_TRUE(search.contains(200))
 VERIFY_TRUE(search.contains(1))
-[1;32mPASSED	TreeUnitTests::DeleteRootTest
-[0m
-[1;33mRunning test:	TreeUnitTests::DeleteMiddleTest[0m
+PASSED  TreeUnitTests::DeleteRootTest
+
+Running test:   TreeUnitTests::DeleteMiddleTest
 VERIFY_TRUE(search.insert(200))
 VERIFY_TRUE(search.insert(50))
 VERIFY_TRUE(search.insert(1))
@@ -120,19 +120,19 @@ VERIFY_TRUE(search.contains(5))
 VERIFY_TRUE(search.contains(17))
 VERIFY_TRUE(search.contains(15))
 VERIFY_TRUE(search.contains(4))
-[1;32mPASSED	TreeUnitTests::DeleteMiddleTest
-[0m
+PASSED  TreeUnitTests::DeleteMiddleTest
+
 ---------------------------------------------
 -----------        Summary       ------------
 ---------------------------------------------
-[1;32mPASSED	MapUnitTests::SingleLinkTest[0m
-[1;32mPASSED	MapUnitTests::MultipleLinkTest[0m
-[1;32mPASSED	MapUnitTests::DisconnectedTest[0m
-[1;32mPASSED	MapUnitTests::TwoRouteTest[0m
-[1;32mPASSED	MapUnitTests::SingleRemoveNodeTest[0m
-[1;32mPASSED	MapUnitTests::RemoveNodeTest[0m
-[1;32mPASSED	TreeUnitTests::SingleEntryTest[0m
-[1;32mPASSED	TreeUnitTests::MultipleEntryTest[0m
-[1;32mPASSED	TreeUnitTests::DeleteRootTest[0m
-[1;32mPASSED	TreeUnitTests::DeleteMiddleTest[0m
-Test passed:	10 / 10
+PASSED  MapUnitTests::SingleLinkTest
+PASSED  MapUnitTests::MultipleLinkTest
+PASSED  MapUnitTests::DisconnectedTest
+PASSED  MapUnitTests::TwoRouteTest
+PASSED  MapUnitTests::SingleRemoveNodeTest
+PASSED  MapUnitTests::RemoveNodeTest
+PASSED  TreeUnitTests::SingleEntryTest
+PASSED  TreeUnitTests::MultipleEntryTest
+PASSED  TreeUnitTests::DeleteRootTest
+PASSED  TreeUnitTests::DeleteMiddleTest
+Test passed:    10 / 10
