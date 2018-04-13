@@ -1,10 +1,10 @@
-CC = g++
-OUT_FILE_NAME = graph
+include ../../makefile.inc
 
-CFLAGS= -g -Wall -std=c++14
+OUT_FILE_NAME = graph
+CFLAGS= $(DEFAULT_FLAGS)
 INC= -I../src -I../../test_tool 
-LIBS= -L../../lib -lUnitTestFrameWork -lTreeAndMap
-OUT_DIR=../../output
+LIBS= -L$(TARGET_PATH)/lib -lUnitTestFrameWork -lTreeAndMap
+OUT_DIR= $(TARGET_PATH)/output
 
 all: dirmake
 	$(CC) $(CFLAGS) $(INC) $(LIBS) *.cpp -o $(OUT_DIR)/$(OUT_FILE_NAME)

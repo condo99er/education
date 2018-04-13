@@ -1,10 +1,10 @@
-CC = g++
+include ../../makefile.inc
+
 OUT_FILE_NAME = libTreeAndMap.a
+CFLAGS= $(DEFAULT_FLAGS) -c
 
-CFLAGS= -fPIC -g -Wall -c  -std=c++14
-
-OBJ_DIR=../../obj
-OUT_DIR=../../lib
+OBJ_DIR= $(TARGET_PATH)/obj
+OUT_DIR= $(TARGET_PATH)/lib
 
 $(OUT_FILE_NAME): $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(wildcard *.cpp))
 	ar rsv $(OUT_DIR)/$@ $^
