@@ -37,9 +37,9 @@
 #define VERIFY_TRUE(statement) __VERIFY("TRUE", ==, statement, true, false)
 #define VERIFY_FALSE(statement) __VERIFY("FALSE", ==, statement, false, false)
 
-#define ADD_TEST(test) { \
+#define ADD_TEST(test, ...) { \
     COLOR_LINE(YELLOW, "Running test:\t" << #test) \
-    bool result = test(); \
+    bool result = test(__VA_ARGS__); \
     UnitTests::s_summary.push_back(std::make_pair(#test, result)); \
     PASS_FAIL_LINE(result, #test << std::endl ) \
 }
